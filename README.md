@@ -7,6 +7,40 @@ If link is broken, see [capywatch.md](capywatch.md).
 
 View the live [CapyWatch](https://capywatch.tjwgore.com/).
 
+## Solved
+
+1. Allows users to submit a capybara observation:
+
+```bash
+curl --request POST \
+  --url https://capywatch.tjwgore.com/api/observations \
+  --header 'accept: application/json' \
+  --header 'content-type: application/json' \
+  --data '{"capybara_id": 1,"city_id": 4,"has_hat": false,"observed_at": "2018-01-02"}'
+```
+
+2. Allows users to add a new capybara to be tracked:
+
+```bash
+curl --request POST \
+  --url https://capywatch.tjwgore.com/api/capybaras \
+  --header 'accept: application/json' \
+  --header 'content-type: application/json' \
+  --data '{"name": "Capy","hex_color": "#ffffff","length_inches": 34,"height_inches": 12}'
+```
+
+3. Testing
+
+Go through getting started and then run
+
+```bash
+php artisan test
+```
+
+4. UI demo
+
+[CapyWatch](https://capywatch.tjwgore.com/)
+
 ## Built With
 
 Laravel, React, Vite, and Tailwind CSS
