@@ -1,0 +1,101 @@
+
+# Observations
+############################################
+
+
+# Get list of observations
+GET http://capywatch.test/api/observations
+Accept: application/json
+content-type: application/json
+
+###
+
+# Get capybaras and cities
+GET http://capywatch.test/api/observations/create
+Accept: application/json
+content-type: application/json
+
+###
+
+# Create a new observation
+POST http://capywatch.test/api/observations
+Accept: application/json
+content-type: application/json
+
+{
+  "capybara_id": 1,
+  "city_id": 4,
+  "has_hat": false,
+  "observed_at": "2023-01-02"
+}
+
+###
+
+# Update an observation
+@observationId = 6
+
+PUT http://capywatch.test/api/observations/{{observationId}}
+Accept: application/json
+content-type: application/json
+
+{
+  "capybara_id": 2,
+  "city_id": 3,
+  "has_hat": true,
+  "observed_at": "2021-01-01"
+}
+
+###
+
+# Delete an observation
+DELETE http://capywatch.test/api/observations/{{observationId}}
+Accept: application/json
+Content-type: application/json
+
+###
+
+# Capybara
+############################################
+
+# Get list of capybaras
+GET http://capywatch.test/api/capybaras
+Accept: application/json
+content-type: application/json
+
+###
+
+# Create a new capybara
+POST http://capywatch.test/api/capybaras
+Accept: application/json
+Content-type: application/json
+
+{
+  "name": "Capy",
+  "hex_color": "#ffffff",
+  "length_inches": 34,
+  "height_inches": 12
+}
+
+###
+@capybaraId = 4
+
+# Update a capybara
+PUT http://capywatch.test/api/capybaras/{{capybaraId}}
+Accept: application/json
+Content-type: application/json
+
+{
+  "name": "Capy21",
+  "hex_color": "#ffffff",
+  "length_inches": 34,
+  "height_inches": 12
+}
+
+###
+
+# Delete a capybara
+DELETE http://capywatch.test/api/capybaras/{{capybaraId}}
+Accept: application/json
+Content-type: application/json
+
+############################################

@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "type": "module",
+    "engines": {
+        "npm": "9.8.1",
+        "node": "18.18.0"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.8.0",
+        "vite": "^4.0.0"
+    }
+}
