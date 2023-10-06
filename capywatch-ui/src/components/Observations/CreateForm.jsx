@@ -45,6 +45,13 @@ export default function CreateForm({ refetch, cities, capybaras }) {
     return form.invalid(field) ? "border-red-500" : "border-gray-300";
   };
 
+  const cancel = () => {
+    form.reset();
+    ['capybara_id', 'city_id', 'observed_at', 'has_hat'].forEach((field) => {
+      form.forgetError(field);
+    });
+  }
+
   const cannotSubmit = form.processing || form.hasErrors;
 
   return (
@@ -172,7 +179,7 @@ export default function CreateForm({ refetch, cities, capybaras }) {
               </button>
               <button
                 type="button"
-                onClick={() => form.reset()}
+                onClick={() => cancel()}
                 className="cursor-pointer px-5 py-2 border text-base rounded-md bg-white hover:bg-gray-100 font-medium"
               >
                 Cancel

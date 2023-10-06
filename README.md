@@ -3,9 +3,9 @@
 Track the daily movement of Capybaras in selected cities.
 
 Read more details [here](https://gist.github.com/damiani/15179139347b909edd280d04a94fa972).
-If link is broken, see [capy.md](capy.md).
+If link is broken, see [capywatch.md](capywatch.md).
 
-View the live [demo](https://google.com).
+View the live [CapyWatch](https://capywatch.tjwgore.com/).
 
 ## Built With
 
@@ -14,14 +14,14 @@ Laravel, React, Vite, and Tailwind CSS
 ## Tools needed to run locally
 
 Mysql, composer 2+, node v18.18.0, npm
-php8.1
+php8.1 and valet
 
 ## Getting started
 
 Clone the repo
 
 ```bash
-git clone
+git clone https://github.com/tjgore/capywatch.git
 ```
 
 Install PHP dependencies
@@ -72,20 +72,30 @@ echo "CREATE DATABASE capywatch" | mysql -u root
 # for testing
 echo "CREATE DATABASE capywatch_testing" | mysql -u root
 ```
+
 If your mysql user needs a password update your laravel database env.
 If you don't need a password, carry on.
 
-Run migrations, seed and tests
+Or try using sqlite. Didn't test this.
+```bash
+touch database/database.sqlite
+
+# update laravel database env
+DB_CONNECTION=sqlite
+# comment out the rest of the database envs
+
+```
+
+Run migrations and seeders
 
 ```bash
 # in root of project
 
 php artisan migrate
 php artisan db:seed
-php artisan test
 ```
 
-Run the app
+## Run the app
 
 Run Laravel using valet.
 
@@ -106,18 +116,23 @@ npm run dev
 # keep running
 ```
 
+## Testing
+
+```bash
+php artisan test
+```
+
 ## API Endpoints
 
 If you have VS Code and you can install this REST Client extension to test the endpoints.
 https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
-Endpoints can be found in the `api.http` file.
+Endpoints can be found in the [api.http](api.http) file.
 
 Start from the first request and go down the list sending each request.
 Some request have variables above them. You may or may not need to update them to run some requests.
 
 You should be fine from a fresh install.
-
 
 ## Deployment
 
